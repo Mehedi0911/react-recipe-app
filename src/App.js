@@ -43,16 +43,14 @@ const App = () =>{
             <input  className="search-bar" type="text" value={search} onChange ={handleSearch}/>
             <button className="search-btn">Search</button>
         </form>
-
+      <div className="recipe-container">
         {recipes.map(recipe => (
-          <div >
             <div>
-            <Recipe title={recipe.recipe.label} image={recipe.recipe.image} calories={recipe.recipe.calories}/>
+            <Recipe title={recipe.recipe.label} image={recipe.recipe.image} calories={Math.floor(recipe.recipe.calories)}/>
             </div>
-        </div>
         ))}
 
-        
+      </div>
     </div>
   )
 }
